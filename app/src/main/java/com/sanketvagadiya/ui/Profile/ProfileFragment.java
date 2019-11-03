@@ -3,6 +3,8 @@ package com.sanketvagadiya.ui.Profile;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -16,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -42,9 +45,9 @@ public class ProfileFragment extends Fragment {
     private RequestQueue mQueue;
     private JSONObject jsonObject = new JSONObject();
     private ListView lvWorkExperience;
- private   TextView tvProfileName ;
-  private  TextView tvProfileSummary ;
-  private  ImageView ivProfileImage ;
+    private TextView tvProfileName;
+    private TextView tvProfileSummary;
+    private ImageView ivProfileImage, ivLinkedIn, ivPlayStore, ivGithub;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -53,12 +56,42 @@ public class ProfileFragment extends Fragment {
                 .class);
         View root = inflater.inflate(R.layout.profile_fragment, container, false);
 
-          tvProfileName = root.findViewById(R.id.tvProfileName);
-          tvProfileSummary = root.findViewById(R.id.tvProfileSummary);
-          ivProfileImage = root.findViewById(R.id.ivProfileImage);
+        tvProfileName = root.findViewById(R.id.tvProfileName);
+        tvProfileSummary = root.findViewById(R.id.tvProfileSummary);
+        ivProfileImage = root.findViewById(R.id.ivProfileImage);
+
+        ivLinkedIn = root.findViewById(R.id.ivLinkedIn);
+        ivPlayStore = root.findViewById(R.id.ivPlayStore);
+        ivGithub = root.findViewById(R.id.ivGithub);
+
+        ivLinkedIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToUrl(Constants.LINKEDIN_URL);
+            }
+        });
+        ivPlayStore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToUrl(Constants.PLAYSTORE_URL);
+            }
+        });
+        ivGithub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToUrl(Constants.GITHUB_URL);
+            }
+        });
 
         return root;
     }
+
+    private void goToUrl(String url) {
+        Uri uri = Uri.parse(url);
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
+    }
+
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {

@@ -6,6 +6,10 @@ public class Constants {
     public static String PAST_WORK_URL ="https://api.myjson.com/bins/1bsp2w";
     public static String PROFILE_URL="https://api.myjson.com/bins/10b8tk";
 
+    public static String GITHUB_URL="https://github.com/sanket293";
+    public static String LINKEDIN_URL="https://www.linkedin.com/in/sanket-vagadiya";
+    public static String PLAYSTORE_URL="http://bit.ly/sanket-vagadiya";
+
     public static String PROJECT_JSONARRAY="Projects";
     public static String PROJECT_JSON_PROJECTNAME="projectName";
     public static String PROJECT_JSON_IMAGEURL="imageUrl";

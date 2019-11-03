@@ -1,6 +1,8 @@
 package com.sanketvagadiya.ui.Projects;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,6 +17,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -126,7 +129,7 @@ public class ProjectsFragment extends Fragment {
         }
 
         @Override
-        public View getView(int i, View convertView, ViewGroup viewGroup) {
+        public View getView(final int i, View convertView, ViewGroup viewGroup) {
 
             final ViewHolder holder;
 
@@ -146,6 +149,18 @@ public class ProjectsFragment extends Fragment {
                         .load(projectList.get(i).getImageUrl())
                         .apply(RequestOptions.circleCropTransform())
                         .into(holder.ivProjectImage);
+
+
+                convertView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Uri uri = Uri.parse(projectList.get(i).getProjectUrl()); // missing 'http://' will cause crashed
+                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                        startActivity(intent);
+                    }
+                });
+
+
                 convertView.setTag(holder);
 
             } else {
