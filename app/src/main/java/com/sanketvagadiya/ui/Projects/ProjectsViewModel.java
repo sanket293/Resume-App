@@ -30,9 +30,6 @@ public class ProjectsViewModel extends ViewModel {
         mQueue = Volley.newRequestQueue(context);
          }
 
-
-
-
 //    public List<ProjectModel> getProjectList(Context mContext) {
 //        ProjectDetailsAsync projectDetailsAsync = new ProjectDetailsAsync();
 //

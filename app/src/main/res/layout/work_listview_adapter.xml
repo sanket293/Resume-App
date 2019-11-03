@@ -26,10 +26,11 @@
             android:padding="10dp">
 
             <ImageView
+                android:id="@+id/ivCompanyImage"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_gravity="center"
-                android:src="@color/colorAccent"></ImageView>
+                ></ImageView>
 
             <LinearLayout
                 android:layout_marginLeft="5dp"
@@ -57,7 +58,7 @@
 
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
                     android:orientation="horizontal">
@@ -66,8 +67,9 @@
                         android:id="@+id/tvWorkAdapterJoinFrom"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="February 2017"
+                        android:layout_weight="1"
                         android:gravity="start"
-                        android:text="June 2016"
                         android:textSize="20sp"></TextView>
 
                     <TextView
@@ -79,8 +81,10 @@
                     <TextView
                         android:id="@+id/tvWorkAdapterJoinTo"
                         android:layout_width="wrap_content"
+                        android:gravity="end"
                         android:layout_height="wrap_content"
-                        android:text="June 2017"
+                        android:text="February 2017"
+                        android:layout_weight="1"
                         android:textSize="20sp"></TextView>
 
                 </LinearLayout>

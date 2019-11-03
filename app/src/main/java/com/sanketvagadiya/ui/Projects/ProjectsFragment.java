@@ -1,28 +1,20 @@
 package com.sanketvagadiya.ui.Projects;
 
-import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModelProviders;
-
 import android.content.Context;
-import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -35,7 +27,6 @@ import com.bumptech.glide.request.RequestOptions;
 import com.sanketvagadiya.Constants.Constants;
 import com.sanketvagadiya.Model.ProjectModel;
 import com.sanketvagadiya.R;
-import com.sanketvagadiya.ui.BlankViewModel;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -75,7 +66,6 @@ public class ProjectsFragment extends Fragment {
 
 
     public void sendProjectListJson() {
-
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, Constants.PROJECT_URL, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {

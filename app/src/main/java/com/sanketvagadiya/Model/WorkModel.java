@@ -2,16 +2,18 @@ package com.sanketvagadiya.Model;
 
 public class WorkModel {
 
-    String roleName, companyName, CompanyLocation, JoinFrom, JoinTo, JobResponsibilities;
+    String roleName, companyName, companyLocation, joinFrom, joinTo, jobResponsibilities;
     String imageUrl;
+
+
 
     public WorkModel(String roleName, String companyName, String companyLocation, String joinFrom, String joinTo, String jobResponsibilities, String imageUrl) {
         this.roleName = roleName;
         this.companyName = companyName;
-        CompanyLocation = companyLocation;
-        JoinFrom = joinFrom;
-        JoinTo = joinTo;
-        JobResponsibilities = jobResponsibilities;
+        this.companyLocation = companyLocation;
+        this.joinFrom = joinFrom;
+        this.joinTo = joinTo;
+        this.jobResponsibilities = jobResponsibilities;
         this.imageUrl = imageUrl;
     }
 
@@ -32,35 +34,35 @@ public class WorkModel {
     }
 
     public String getCompanyLocation() {
-        return CompanyLocation;
+        return companyLocation;
     }
 
     public void setCompanyLocation(String companyLocation) {
-        CompanyLocation = companyLocation;
+        this.companyLocation = companyLocation;
     }
 
     public String getJoinFrom() {
-        return JoinFrom;
+        return joinFrom;
     }
 
     public void setJoinFrom(String joinFrom) {
-        JoinFrom = joinFrom;
+        this.joinFrom = joinFrom;
     }
 
     public String getJoinTo() {
-        return JoinTo;
+        return joinTo;
     }
 
     public void setJoinTo(String joinTo) {
-        JoinTo = joinTo;
+        this.joinTo = joinTo;
     }
 
     public String getJobResponsibilities() {
-        return JobResponsibilities;
+        return jobResponsibilities;
     }
 
     public void setJobResponsibilities(String jobResponsibilities) {
-        JobResponsibilities = jobResponsibilities;
+        this.jobResponsibilities = jobResponsibilities;
     }
 
     public String getImageUrl() {
